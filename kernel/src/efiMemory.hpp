@@ -24,7 +24,7 @@ enum class EFIMemoryType:uint32_t
 	EfiMemoryMappedIOPortSpace,
 
 	EfiPalCode,
-}
+};
 
 struct EFI_MEMORY_DESCRIPTOR {
 	EFIMemoryType type;

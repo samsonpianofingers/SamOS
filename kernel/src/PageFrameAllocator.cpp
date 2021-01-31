@@ -18,13 +18,13 @@ void PageFrameAllocator::ReadEFIMemoryMap(EFI_MEMORY_DESCRIPTOR* mMap, size_t mM
     initialized = true;
 
 
-    uint64_t mMapEntries = mMapsize / mMapDescSize;
+    uint64_t mMapEntries = mMapSize / mMapDescSize;
     
     void* largestFreeMemSeg = nullptr;
-    size_t largestFreeMemSegSize = NULL;
+    size_t largestFreeMemSegSize = 0;
     
     for(int i = 0; i < mMapEntries; i++){
-        EFI_MEMORY_DESCRIPTOR* desc = (EFI_MEMORY_DESCRIPTOR*) ((uint64_t)mMap + (i * mMapDescSize);
+        EFI_MEMORY_DESCRIPTOR* desc = (EFI_MEMORY_DESCRIPTOR*) ((uint64_t)mMap + (i * mMapDescSize));
         if(desc->type == EFIMemoryType::EfiConventionalMemory)
         {
             if(desc->numPages * 4096 > largestFreeMemSegSize)
