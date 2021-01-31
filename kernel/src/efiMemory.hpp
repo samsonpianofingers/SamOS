@@ -7,17 +7,22 @@ enum class EFIMemoryType:uint32_t
 	EfiReservedMemoryType = 0,
 	EfiLoaderCode,
 	EfiLoaderData,
+
 	EfiBootServicesCode,
 	EfiBootServicesData,
+
 	EfiRuntimeServicesCode,
 	EfiRuntimeServicesData,
+
 	EfiConventionalMemory,
-	EfiLoaderCode,
 	EfiUnusableMemory,
+
 	EfiACPIReclaimMemory,
 	EfiACPIMemoryNVS,
+
 	EfiMemoryMappedIO,
 	EfiMemoryMappedIOPortSpace,
+
 	EfiPalCode,
 }
 
